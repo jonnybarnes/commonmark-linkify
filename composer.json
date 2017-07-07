@@ -5,6 +5,7 @@
     "keywords": ["markdown", "commonmark"],
     "homepage": "https://github.com/jonnybarnes/commonmark-linkify",
     "require": {
+        "php": "^5.4|^7.0",
         "league/commonmark": "^0.15.4"
     },
     "require-dev": {
