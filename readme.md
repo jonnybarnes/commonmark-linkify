@@ -17,4 +17,5 @@ $environment->addExtension(new LinkifyExtension());
 $converter = new Converter(new DocParser($environment), new HtmlRenderer($environment));
 
 echo $converter->convertToHtml('Some text-only link https://example.org');
+// Some text link <a href="https://example.org">example.org</a>
 ```
