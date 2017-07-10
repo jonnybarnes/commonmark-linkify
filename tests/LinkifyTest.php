@@ -31,4 +31,18 @@ class LinkifyTest extends TestCase
         $expected = '<p>A link <a href="https://example.org/bio">example.org/bio</a></p>'.PHP_EOL;
         $this->assertEquals($expected, $this->converter->convertToHtml($input));
     }
+
+    public function test_we_ignore_existing_anchor_tags()
+    {
+        $input = 'Some <a href="https://example.org">link</a> here';
+        $expected = '<p>' . $input . '</p>' . PHP_EOL;
+        $this->assertEquals($expected, $this->converter->convertToHtml($input));
+    }
+
+    public function test_ftp_link()
+    {
+        $input = 'Grab from the server ftp://some.server.com/file.tar.xz';
+        $expected = '<p>Grab from the server <a href="ftp://some.server.com/file.tar.xz">some.server.com/file.tar.xz</a></p>'.PHP_EOL;
+        $this->assertEquals($expected, $this->converter->convertToHtml($input));
+    }
 }
