@@ -45,4 +45,11 @@ class LinkifyTest extends TestCase
         $expected = '<p>Grab from the server <a href="ftp://some.server.com/file.tar.xz">some.server.com/file.tar.xz</a></p>'.PHP_EOL;
         $this->assertEquals($expected, $this->converter->convertToHtml($input));
     }
+
+    public function test_url_followed_by_emoji()
+    {
+        $input = 'I love https://duckduckgo.com 💕'; // there’s a two hearts emoji
+        $expected = '<p>I love <a href="https://duckduckgo.com">duckduckgo.com</a> 💕</p>'.PHP_EOL;
+        $this->assertEquals($expected, $this->converter->convertToHtml($input));
+    }
 }
