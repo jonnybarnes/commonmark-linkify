@@ -27,7 +27,7 @@ class LinkifyParser extends AbstractInlineParser
         $previousState = $cursor->saveState();
         // Parse for a URL
         $cursor->advance();
-        $match = $cursor->match('/^[t]?tp[s]?:\/\/(.*)/i');
+        $match = $cursor->match('/^[t]?tp[s]?:\/\/([^\s]*)/i');
         if (empty($match)) {
             // regex failed to match, this isn’t a valid url
             $cursor->restoreState($previousState);
