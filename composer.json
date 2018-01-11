@@ -1,12 +1,12 @@
 {
     "name": "jonnybarnes/commonmark-linkify",
-    "description": "Turn plaintext urls into clickable links",
+    "description": "Turn plaintext URLs into click-able links",
     "type": "library",
-    "keywords": ["markdown", "commonmark"],
+    "keywords": ["markdown", "commonmark", "extension"],
     "homepage": "https://github.com/jonnybarnes/commonmark-linkify",
     "require": {
         "php": "^7.0",
-        "league/commonmark": "^0.16.0"
+        "league/commonmark": "^0.17.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~6.0"
