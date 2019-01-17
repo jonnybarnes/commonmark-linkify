@@ -19,7 +19,7 @@ class LinkifyParser extends AbstractInlineParser
         $startChar = $cursor->peek(0);
         // the h/f symbol must be at the start or preceded by a space
         $previousChar = $cursor->peek(-1);
-        if ($previousChar !== null && $previousChar !== ' ') {
+        if ($previousChar !== null && $previousChar !== ' ' && $previousChar !== "\n") {
             // peek() doesn't modify the cursor, so no need to restore state first
             return false;
         }

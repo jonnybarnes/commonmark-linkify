@@ -52,4 +52,11 @@ class LinkifyTest extends TestCase
         $expected = '<p>I love <a href="https://duckduckgo.com">duckduckgo.com</a> 💕</p>'.PHP_EOL;
         $this->assertEquals($expected, $this->converter->convertToHtml($input));
     }
+
+    public function test_multiple_urls_separated_by_newline()
+    {
+        $input = "https://duckduckgo.com\nhttps://example.org";
+        $expected = "<p><a href=\"https://duckduckgo.com\">duckduckgo.com</a>\n<a href=\"https://example.org\">example.org</a></p>".PHP_EOL;
+        $this->assertEquals($expected, $this->converter->convertToHtml($input));
+    }
 }
